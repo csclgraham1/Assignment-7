@@ -77,15 +77,32 @@ while.
     - [Link 1](https://github.com/WordPress/WordPress/commit/263831a72d08556bc2f3a328673d95301a152829)
   
   
-3. (Required) Vulnerability Name or ID
+3. (Required) Vulnerability Name or ID 8376
   - [ ] Summary: 
-    - Vulnerability types:
+The url http://xxx.xxx.xxx.xxx/wp-admin/press-this.php?u=URL_TO_SCRAPE&url-scan-submit=Scan does not validate that user intends to send a scrape request.
+The filter does not validate for 0.0.0.0:PORT and allows the attacker to make the victim send GET request to servers priate127.0.0.1:PORT, localhost:PORT or anything which can be accessed via 0.0.0.0
+
+So basicly a wordpress installations can send unwanted scrape/scan requests on behalf of their user invoked by the attacker. Including private connections via 0.0.0.0
+    - Vulnerability types: Cross-Site Request Forgery (CSRF)
     - Tested in version:
     - Fixed in version: 
   - [ ] GIF Walkthrough: 
   - [ ] Steps to recreate: 
-  - [ ] Affected source code:
-    - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php)
+1. Sign in to owner of myWordpress.com
+2. Victim is logged into Wordpress.
+3. Victim visits bad site with a content of`<img src="//myWordpress.com/wp-admin/press-this.php?u=htto://0.0.0.0:8080&url-scan-submit=Scan" />
+4. Victim sends a unwanted request to their server requesting a internal server address to be hit.
+5.Server sends get request to 0.0.0.0:8080
+6. Servers private 127.0.0.1 answers back.
+This example is with a private address, but it could also be a public. address
+  - [ ] Affected source code: (https://hackerone.com/reports/110801)
+    - [Link 1](https://hackerone.com/reports/110801)
+    https://core.trac.wordpress.org/changeset/36435
+    https://wpvulndb.com/vulnerabilities/8376
+https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2222
+https://wordpress.org/news/2016/02/wordpress-4-4-2-security-and-maintenance-release/
+
+
     
     
     
