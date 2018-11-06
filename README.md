@@ -86,6 +86,9 @@ while.
   - [ ] Steps to recreate: 
   - [ ] Affected source code:
     - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php)
+    
+    
+    
 1. (Optional) Vulnerability Name or ID
   - [ ] Summary: 
     - Vulnerability types:
@@ -107,7 +110,7 @@ while.
 
 ## Assets
 
-List any additional assets, such as scripts or files
+dos.html, dos, 
 
 ## Resources
 
@@ -118,8 +121,7 @@ GIFs created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while doing the work
-
+All of these challenges are very hard to find and follow as I am a Fincanca major with zero computing and linux background.
 ## License
 
     Copyright [yyyy] [name of copyright owner]
