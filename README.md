@@ -8,15 +8,21 @@ Time spent: **6** hours spent in total
 ## Pentesting Report
 
 1. (Required) Vulnerability Name or ID 8819
-  - [ ] Summary: Inject a malicious script in to the filename which a victim tries to upload leading to XSS inside the administrators control panel.
-  Two different "file to large" cases end up in interpolating the file name and appending it into DOM unsanitized leading to XSS.
-    - Vulnerability types:injecting a scpript 
+  - [ ] Summary: An attacker can inject a malicious script in to the filename which a victim tries to upload leading to XSS inside the administrators control panel.
+
+Two different "file to large" cases end up in interpolating the file name and appending it into DOM unsanitized leading to XSS.
+Any file type can be used (.jar whatever) as the vuln happens before the type is validated.
+    - Vulnerability types:injecting a scpript, xxs
     - Tested in version: 
     - Fixed in version: 
   - [ ] GIF Walkthrough: 8819.gif
-  - [ ] Steps to recreate: step 1: downloading a 20mb file
-  2. Changing file name in order to expoloit it
-  3. upload it to http://localhost/wp-admin/media-new.php
+  - [ ] Steps to recreate: 
+ 1.  Create a 20MB file called
+Dinosaurs secret life<img src=x onerror=alert(1)>.png
+
+2. Goto your wordpress site http://127.0.0.1/wp-admin/media-new.php and dragndrop or use file manager or choose the file via. the "Select Files" button.
+
+3. A error will appear with ... exceeds the maximum upload size for this site. along with a alert box to display that the payload has been executed.
   - [ ] Affected source code:
     - [Link 1](https://hackerone.com/reports/203515)
     
@@ -96,26 +102,30 @@ So basicly a wordpress installations can send unwanted scrape/scan requests on b
 6. Servers private 127.0.0.1 answers back.
 This example is with a private address, but it could also be a public. address
   - [ ] Affected source code: (https://hackerone.com/reports/110801)
-    - [Link 1](https://hackerone.com/reports/110801)
+   https://hackerone.com/reports/110801
     https://core.trac.wordpress.org/changeset/36435
     https://wpvulndb.com/vulnerabilities/8376
 https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2222
-https://wordpress.org/news/2016/02/wordpress-4-4-2-security-and-maintenance-release/
-
-
+https://wordpress.org/news/2016/02/wordpress-4-4-2-security-and-maintenance-release
     
     
     
-1. (Optional) Vulnerability Name or ID
+4. (Optional) Vulnerability Name or ID 9021
   - [ ] Summary: 
-    - Vulnerability types:
+    - Vulnerability types:XXS
     - Tested in version:
     - Fixed in version: 
   - [ ] GIF Walkthrough: 
   - [ ] Steps to recreate: 
+
   - [ ] Affected source code:
-    - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php)
-1. (Optional) Vulnerability Name or ID
+    
+    
+    
+    
+    
+    
+5. (Optional) Vulnerability Name or ID
   - [ ] Summary: 
     - Vulnerability types:
     - Tested in version:
