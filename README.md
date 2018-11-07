@@ -148,7 +148,7 @@ GIFs created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-All of these challenges are very hard to find and follow as I am a Fincanca major with zero computing and linux background.
+All of these challenges are very hard to find and follow as I am a Finance major with zero computing and linux background.
 ## License
 
     Copyright [yyyy] [name of copyright owner]
